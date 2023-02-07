@@ -1,0 +1,72 @@
+{% extends "main_layout.html" %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    {% block content%}
+    
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+          <div class="col-lg">
+            <!-- Trigger the modal with a button -->
+            <a href="{{ url_for('user_input') }}" class="btn btn-sm btn-primary my-3" style="margin-bottom: 1.3rem;" >Input Data</a>
+            
+            <div class="col-lg-10">
+            <table class="table table-hover">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">Nama</th>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Level</th>
+                    <th scope="col">Aksi</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  
+                  {% for u in user %}
+                  <tr>
+                      <th scope="row">{{ loop.index }}</th>
+                      <td>{{ u.nama }}</td>
+                      <td>{{ u.username }}</td>
+                      <td>{{ u.email }}</td>
+                      <td>{{ u.level }}</td>
+                      <td>
+                        <a href="{{ url_for('user_edit', id= u.id) }}" class="btn btn-sm btn-warning">Edit</i></a>
+                        <a href="{{ url_for('user_delete', id= u.id) }}" class="btn  btn-sm btn-danger" onclick="return confirm('Anda Yakin Menghapus Data Ini ?')">Delete</a>
+                      </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+                </div>
+                <!-- /.direct-chat-pane -->
+              </div>
+              <!-- /.card-body -->
+              
+
+            
+          </section>
+          <!-- right col -->
+        </div>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+  {% endblock%}

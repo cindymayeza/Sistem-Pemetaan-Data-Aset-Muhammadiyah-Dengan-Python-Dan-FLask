@@ -1,0 +1,76 @@
+{% extends "main_layout.html" %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    {% block content%}
+    
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <center><h3 class="col-lg my-2" style="margin-bottom: 10;"></h3></center>
+
+
+        <div class="row">
+          <div class="col-lg col">
+            <div class="p-4">
+            
+            <form action="{{ url_for('cluster') }}" method="POST" enctype="multipart/form-data">
+               <div class="row mb-3">
+                   <label for="datasetType" class="col-sm-3 col-form-label">Jenis Aset</label>
+                    <div class="col-sm-8">
+                    <select name="datasetType" id="datasetType" class="form-select col-lg" aria-label="Default select example">
+                        <option selected>Choose...</option>
+                        <option value="Tanah">Tanah</option>
+                        <option value="Bangunan">Bangunan</option>
+                        <option value="Kendaraan">Kendaraan</option>
+                        <option value="Barang">Barang</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="wilayah" class="col-sm-3 col-form-label">Wilayah</label>
+                    <div class="col-sm-8">
+                    <input type="text" readonly class="form-control-plaintext" id="wilayah" name="wilayah" value="Daerah Istimewa Yogyakarta">
+                    </div>
+                </div>
+
+
+                <div class="row mb-3">
+                    <label for="file" class="col-sm-3 col-form-label">File</label>
+                    <div class="col-sm-8">
+                    <input class="form-control" type="file" name="file" id="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn-sm btn-primary">Submit</button>
+            </form>
+            </div>
+
+            
+            
+                  </div>
+                  </div>
+                  </div>
+            
+                </div>
+                <!-- /.direct-chat-pane -->
+              </div>
+              <!-- /.card-body -->
+              
+
+            
+          </section>
+          <!-- right col -->
+        </div>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  {% endblock%}

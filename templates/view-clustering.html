@@ -1,0 +1,104 @@
+{% extends "main_layout.html" %}
+{% block title %} Hasil Clustering Data {% endblock %}
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    {% block content%}
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            
+            <h5 class="m-0">Laporan Hasil Klasifikasi</h5>
+          </div><!-- /.col -->
+          
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="card">
+            
+            <div class="card-body">
+              <div class="row">
+                <div class="col-lg-3 col-6">
+                  <!-- small box -->
+                  <div class="small-box bg-info">
+                      <div class="inner" style="text-align: center ;">
+                        <h5>Tanah</h5>
+                      </div>
+                      <div class="icon">
+                          <i class="fas fa-file-certificate"></i>
+                      </div>
+                      <a href="{{ url_for('view_tanah') }}" class="small-box-footer">Lihat Hasil <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-success">
+                      <div class="inner" style="text-align: center ;">
+                        <h5>Bangunan</h5>
+                      </div>
+                      <div class="icon">
+                        <i class="ion ion-stats-bars"></i>
+                      </div>
+                      <a href="{{ url_for('view_bangunan') }}" class="small-box-footer">Lihat Hasil <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-warning">
+                      <div class="inner" style="text-align: center ;">
+                        <h5>Kendaraan</h5>
+                      </div>
+                      <div class="icon">
+                        <i class="ion ion-person-add"></i>
+                      </div>
+                      <a href="{{ url_for('view_kendaraan') }}" class="small-box-footer">Lihat Hasil <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                  </div>
+
+                  <div class="col-lg-3 col-6">
+                    <!-- small box -->
+                    <div class="small-box bg-danger">
+                      <div class="inner" style="text-align: center ;">
+                        <h5>Barang</h5>
+                      </div>
+                      <div class="icon">
+                        <i class="ion ion-pie-graph"></i>
+                      </div>
+                      <a href="{{ url_for('view_barang') }}" class="small-box-footer">Lihat Hasil <i class="fas fa-arrow-circle-right"></i></a>
+                    </div>
+                  </div>
+              </div>   
+            </div>
+          </div>
+            <!-- ./col -->
+          </div>
+          <!-- /.row -->
+            
+                  
+                </div>
+                <!-- /.direct-chat-pane -->
+              </div>
+              <!-- /.card-body -->
+              
+
+            
+          </section>
+          <!-- right col -->
+        </div>
+        <!-- /.row (main row) -->
+      </div><!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+  {% endblock%}
